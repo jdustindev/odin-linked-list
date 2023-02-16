@@ -18,6 +18,16 @@ class LinkedList
     def prepend(value)
         @head = Node.new(value, @head)
     end
+
+    def size
+        sum = 0
+        current_node = @head
+        while current_node != nil
+            sum += 1
+            current_node = current_node.next_node
+        end
+        sum
+    end
 end
 
 class Node
