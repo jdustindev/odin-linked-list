@@ -29,6 +29,14 @@ class LinkedList
         end
         sum
     end
+
+    def tail
+        current_node = @head
+        while head != nil && current_node.next_node != nil
+            current_node = current_node.next_node
+        end
+        current_node
+    end
 end
 
 class Node
