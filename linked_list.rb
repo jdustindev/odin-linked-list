@@ -47,6 +47,46 @@ class LinkedList
         end
         current_node
     end
+
+    # def pop
+    #     if @head.next_node == nil
+    #         return @head.value
+    #         @head = Node.new(nil, nil)
+    #     end
+    #     current_node = @head
+    #     value = current_node.value
+    #     prev_node = nil
+    #     while current_node.next_node != nil
+    #         prev_node = current_node
+    #         current_node = current_node.next_node
+    #         value = current_node.value
+    #     end
+    #     if (prev_node && prev_node.next_node)
+    #         prev_node.next_node = nil
+    #     end
+    #     value
+    # end
+    def pop
+        if @head != nil
+            if @head.next_node == nil
+                value = @head.value
+                @head = nil
+                return value
+            end
+            current_node = @head
+            prev_node = nil
+            value = nil
+            while current_node.next_node && current_node.next_node != nil
+                value = current_node.next_node.value
+                prev_node = current_node
+                current_node = current_node.next_node
+            end
+        end
+        if (prev_node)
+            prev_node.next_node = nil
+        end
+        value
+    end
 end
 
 class Node
