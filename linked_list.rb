@@ -37,6 +37,16 @@ class LinkedList
         end
         current_node
     end
+
+    def at(index)
+        curr_index = 0
+        current_node = @head
+        while curr_index < index
+            current_node = current_node.next_node
+            curr_index += 1
+        end
+        current_node
+    end
 end
 
 class Node
