@@ -2,6 +2,7 @@ class LinkedList
     def initialize(head=nil)
         @head = head
     end
+    
     def append(value)
         if !@head
             @head = Node.new(value)
@@ -12,6 +13,10 @@ class LinkedList
             end
             current_node.next_node = Node.new(value)
         end
+    end
+
+    def prepend(value)
+        @head = Node.new(value, @head)
     end
 end
 
