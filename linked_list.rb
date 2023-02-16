@@ -121,6 +121,23 @@ class LinkedList
         end
         str + "nil"
     end
+
+    def insert_at(value, index)
+        if index == 0
+            @head = Node.new(value, @head)
+            return
+        end
+        current_node = @head
+        prev_node = nil
+        curr_index = 0
+        while curr_index < index
+            prev_node = current_node
+            current_node = current_node.next_node
+            curr_index += 1
+        end
+        new_node = Node.new(value, current_node)
+        prev_node.next_node = new_node
+    end
 end
 
 class Node
